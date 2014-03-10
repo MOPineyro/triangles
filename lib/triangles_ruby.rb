@@ -18,13 +18,13 @@ class Triangle
   end
 
   def type_of_triangle
-    if side1+side2 < side3
+    if ((side1 + @side2) < @side3) & ((@side2 + @side3) < @side1) & ((@side1 + @side3) < @side2)
       triangle_type = "invalid"
       puts "This isn't a triangle, silly!"
-    elsif side1 == side2 && side1 == side3 && side1 == side2
+    elsif @side1 == @side2 && @side1 == @side3 && @side1 == @side2
       triangle_type = "equilateral"
       puts "Triangle is equilateral"
-    elsif side1 == side2 || side2 == side3 || side3 == side1
+    elsif @side1 == @side2 || @side2 == @side3 || @side3 == @side1
       triangle_type = "isosceles"
       puts "Triangles is isosceles"
     else
